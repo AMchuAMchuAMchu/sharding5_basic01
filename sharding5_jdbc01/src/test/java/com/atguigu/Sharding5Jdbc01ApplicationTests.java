@@ -28,7 +28,7 @@ class Sharding5Jdbc01ApplicationTests {
         LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
 
 //        lqw.orderByDesc(User::getId);
-        lqw.like(User::getUname,"桐");
+        lqw.like(User::getUname,"丝");
 
         List<User> users = userMapper.selectList(lqw);
         System.out.println("====");
