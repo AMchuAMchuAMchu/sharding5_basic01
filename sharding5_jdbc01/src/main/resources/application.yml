@@ -22,8 +22,10 @@ spring:
         password: 123456
     rules:
       dataSources:
-        <data-source-name> (+): # \u8BFB\u5199\u5206\u79BB\u903B\u8F91\u6570\u636E\u6E90\u540D\u79F0
-          static-strategy: # \u8BFB\u5199\u5206\u79BB\u7C7B\u578B
-            write-data-source-name: master # \u5199\u5E93\u6570\u636E\u6E90\u540D\u79F0
-            read-data-source-names: slave1,slave2 # \u8BFB\u5E93\u6570\u636E\u6E90\u540D\u79F0\uFF0C\u591A\u4E2A\u4ECE\u6570\u636E\u6E90\u7528\u9017\u53F7\u5206\u9694
-          loadBalancerName: random # \u8D1F\u8F7D\u5747\u8861\u7B97\u6CD5\u540D\u79F0
+        readwrite_ds:
+          staticStrategy:
+            write-dataSource-name: master
+            read-dataSource-names:
+              - slave1
+              - slave2
+      sql-show: true
