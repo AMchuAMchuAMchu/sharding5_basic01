@@ -18,6 +18,16 @@ class Sharding5Jdbc01ApplicationTests {
 
 
     @Test
+    void testDelete(){
+
+        int i = userMapper.deleteById(26);
+        System.out.println(i>0?"哦咩爹多!!":"残念~~");
+
+
+
+    }
+
+    @Test
     void testUpdate(){
 
         User user = new User();
