@@ -26,7 +26,7 @@ spring:
       readwrite-splitting:
         data-sources:
           <data-source-name>(+): myds
-            static-strategy: static
+            static-strategy:
               write-data-source-name: master
               read-data-source-names: slave1,slave2
             loadBalancerName: alg_round
