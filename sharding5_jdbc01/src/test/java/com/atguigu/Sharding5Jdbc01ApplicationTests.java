@@ -72,11 +72,12 @@ class Sharding5Jdbc01ApplicationTests {
 //        user.setUname("绀野木绵季");
         user.setUname("LycoReco");
         userMapper.insert(user);
-        List<User> users = userMapper.selectList(null);
+        List<User> users01 = userMapper.selectList(null);
+        List<User> users02 = userMapper.selectList(null);
         System.out.println();
         System.out.println();
         System.out.println();
-        users.forEach(System.out::println);
+//        users.forEach(System.out::println);
 
 
     }
