@@ -22,8 +22,6 @@ spring:
         password: 123456
     rules:
       readwrite-splitting:
-        load-balancers:
-          type: ROUND_ROBIN
         dataSources:
           <data-source-name> (+): # 读写分离逻辑数据源名称
             static-strategy: # 读写分离类型
