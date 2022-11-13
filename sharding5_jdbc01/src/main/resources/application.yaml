@@ -31,9 +31,9 @@ spring:
 #          loadBalancers:
 #            random:
 #              type: RANDOM
-#              props:
-#                default: 0
-#                sql-show: true
+              props:
+                default: 0
+                sql-show: true
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
