@@ -28,9 +28,9 @@ spring:
               write-data-source-name: master # 写库数据源名称
               read-data-source-names: slave1,slave2
             loadBalancerName: random
-            loadBalancers:
-              random:
-                type: RANDOM
+          loadBalancers:
+            random:
+              type: RANDOM
     props:
       sql-show: true
 mybatis-plus:
