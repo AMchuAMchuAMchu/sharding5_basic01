@@ -27,11 +27,12 @@ spring:
             static-strategy: # 读写分离类型
               write-data-source-name: master # 写库数据源名称
               read-data-source-names: slave1,slave2
-            loadBalancerName: random
+            loadBalancerName: random01
           loadBalancers:
-            random:
+            random01:
               type: RANDOM
               props:
+                default: 0
                 sql-show: true
 mybatis-plus:
   configuration:
