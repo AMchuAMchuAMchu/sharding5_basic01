@@ -2,6 +2,7 @@ package com.atguigu;
 
 import com.atguigu.entity.User;
 import com.atguigu.mapper.UserMapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,12 +20,17 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testInsertAndSelect(){
 
-        User user = new User();
+//        User user = new User();
 //        user.setUname("优纪");
 //        userMapper.insert(user);
 
 
-        List<User> users = userMapper.selectList(null);
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+
+//        lqw.orderByDesc(User::getId);
+        lqw.like(User::getUname,"桐");
+
+        List<User> users = userMapper.selectList(lqw);
         System.out.println("====");
         System.out.println("====");
         System.out.println("====");
