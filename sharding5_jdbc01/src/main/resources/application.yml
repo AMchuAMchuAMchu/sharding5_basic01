@@ -25,11 +25,11 @@ spring:
     rules:
       readwrite-splitting:
         data-sources:
-          <data-source-name> (+): myds # \u8BFB\u5199\u5206\u79BB\u903B\u8F91\u6570\u636E\u6E90\u540D\u79F0
-            static-strategy: static #\u8BFB\u5199\u5206\u79BB\u7C7B\u578B
-              write-data-source-name: master # \u5199\u5E93\u6570\u636E\u6E90\u540D\u79F0
+          <data-source-name> (+): myds
+            static-strategy: static
+              write-data-source-name: master
               read-data-source-names: slave1,slave2
-              loadBalancerName: alg_round # \u8D1F\u8F7D\u5747\u8861\u7B97\u6CD5\u540D\u79F0
+              loadBalancerName: alg_round
     props:
       sql-show: true
 
