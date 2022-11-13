@@ -25,10 +25,9 @@ spring:
     rules:
       readwrite-splitting:
         data-sources:
-          <data-source-name>(+): myds
-            write-data-source-name: master
-            read-data-source-names: slave1,slave2
-            loadBalancerName: alg_round
+          write-data-source-name: master
+          read-data-source-names: slave1,slave2
+          loadBalancerName: alg_round
     props:
       sql-show: true
 
