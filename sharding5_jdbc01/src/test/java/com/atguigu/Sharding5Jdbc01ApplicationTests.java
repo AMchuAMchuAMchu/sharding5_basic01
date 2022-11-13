@@ -20,8 +20,9 @@ class Sharding5Jdbc01ApplicationTests {
     void testInsertAndSelect(){
 
         User user = new User();
-        user.setUname("优纪");
-        userMapper.insert(user);
+//        user.setUname("优纪");
+//        userMapper.insert(user);
+
 
         List<User> users = userMapper.selectList(null);
         System.out.println("====");
