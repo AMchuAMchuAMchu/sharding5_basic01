@@ -66,12 +66,12 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void contextLoads() {
 
-//        User user = new User();
+        User user = new User();
 //        user.setUname("绀野木绵季");
 //        user.setUname("绀野木绵季");
 //        user.setUname("绀野木绵季");
-//        user.setUname("LycoReco");
-//        userMapper.insert(user);
+        user.setUname("LycoReco");
+        userMapper.insert(user);
         List<User> users = userMapper.selectList(null);
         System.out.println();
         System.out.println();

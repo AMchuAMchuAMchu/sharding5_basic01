@@ -21,11 +21,14 @@ spring:
         username: root
         password: 123456
     rules:
-      dataSources:
-        <data-source-name> (+):  # 读写分离逻辑数据源名称
-          static-strategy: # 读写分离类型
-            write-data-source-name: master # 写库数据源名称
-            read-data-source-names: slave1,slave2
+      readwrite-splitting:
+        load-balancers:
+          type: ROUND_ROBIN
+        dataSources:
+          <data-source-name> (+): # 读写分离逻辑数据源名称
+            static-strategy: # 读写分离类型
+              write-data-source-name: master # 写库数据源名称
+              read-data-source-names: slave1,slave2
     props:
       sql-show: true
 mybatis-plus:
