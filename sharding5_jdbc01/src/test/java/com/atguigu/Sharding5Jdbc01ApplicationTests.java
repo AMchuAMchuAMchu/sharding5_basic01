@@ -18,6 +18,18 @@ class Sharding5Jdbc01ApplicationTests {
 
 
     @Test
+    void testUpdate(){
+
+        User user = new User();
+        user.setId(26L);
+        user.setUname("雪乃");
+        int i = userMapper.updateById(user);
+        System.out.println(i>0?"哦咩爹多!!":"残念~~");
+
+
+    }
+
+    @Test
     void testInsertAndSelect(){
 
 //        User user = new User();
