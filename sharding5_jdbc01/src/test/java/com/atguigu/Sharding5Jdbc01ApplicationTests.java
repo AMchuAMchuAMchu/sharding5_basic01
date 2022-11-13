@@ -74,6 +74,8 @@ class Sharding5Jdbc01ApplicationTests {
         userMapper.insert(user);
         List<User> users01 = userMapper.selectList(null);
         List<User> users02 = userMapper.selectList(null);
+        List<User> users03 = userMapper.selectList(null);
+        List<User> users04 = userMapper.selectList(null);
         System.out.println();
         System.out.println();
         System.out.println();
