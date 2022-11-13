@@ -39,7 +39,7 @@ class Sharding5Jdbc01ApplicationTests {
 //        user.setUname("绀野木绵季");
 //        user.setUname("绀野木绵季");
 //        user.setUname("绀野木绵季");
-        user.setUname("朝田诗乃");
+        user.setUname("桐谷直叶");
         userMapper.insert(user);
 
 
