@@ -31,7 +31,7 @@ class Sharding5Jdbc01ApplicationTests {
     void testUpdate(){
 
         User user = new User();
-        user.setId(26L);
+        user.setId(27L);
         user.setUname("雪乃");
         int i = userMapper.updateById(user);
         System.out.println(i>0?"哦咩爹多!!":"残念~~");
