@@ -24,8 +24,8 @@ spring:
       dataSources:
         readwrite_ds:
           staticStrategy:
-            write-dataSource-name: master
-            read-dataSource-names:
+            writeDataSourceName: master
+            readDataSourceNames:
               - slave1
               - slave2
     props:
