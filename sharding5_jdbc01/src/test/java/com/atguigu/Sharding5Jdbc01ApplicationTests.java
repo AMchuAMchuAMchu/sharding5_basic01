@@ -16,7 +16,7 @@ class Sharding5Jdbc01ApplicationTests {
     void contextLoads() {
 
         User user = new User();
-        user.setUname("asuna");
+        user.setUname("绀野木绵季");
         userMapper.insert(user);
 
 
