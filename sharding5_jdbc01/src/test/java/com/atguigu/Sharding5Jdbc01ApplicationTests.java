@@ -62,7 +62,7 @@ class Sharding5Jdbc01ApplicationTests {
 
     }
 
-    @Transactional
+//    @Transactional//
     @Test
     void contextLoads() {
 
@@ -72,6 +72,11 @@ class Sharding5Jdbc01ApplicationTests {
 //        user.setUname("绀野木绵季");
         user.setUname("LycoReco");
         userMapper.insert(user);
+        List<User> users = userMapper.selectList(null);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        users.forEach(System.out::println);
 
 
     }

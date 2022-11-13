@@ -28,6 +28,7 @@ spring:
             read-dataSource-names:
               - slave1
               - slave2
+    props:
       sql-show: true
 mybatis-plus:
   configuration:
