@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testDelete(){
 
-        int i = userMapper.deleteById(26);
+        int i = userMapper.deleteById(27);
         System.out.println(i>0?"哦咩爹多!!":"残念~~");
 
 
@@ -61,6 +62,7 @@ class Sharding5Jdbc01ApplicationTests {
 
     }
 
+    @Transactional
     @Test
     void contextLoads() {
 
