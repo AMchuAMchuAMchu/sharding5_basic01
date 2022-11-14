@@ -22,6 +22,26 @@ class Sharding5Jdbc01ApplicationTests {
     private OrderMapper orderMapper;
 
 
+
+
+    @Test
+    void testSharding02(){
+
+        List<User> users = userMapper.selectList(null);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        users.forEach(System.out::println);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        List<Order> orders = orderMapper.selectList(null);
+        orders.forEach(System.out::println);
+
+
+    }
+
+
     @Test
     void testSharding01(){
 
