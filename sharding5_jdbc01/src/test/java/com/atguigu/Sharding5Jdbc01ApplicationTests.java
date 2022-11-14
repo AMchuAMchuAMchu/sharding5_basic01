@@ -22,6 +22,16 @@ class Sharding5Jdbc01ApplicationTests {
     private OrderMapper orderMapper;
 
 
+    @Test
+    void testHorVer(){
+
+        Order order = new Order();
+        order.setOrderNo("003");
+        order.setAmount(new BigDecimal(520));
+        order.setUserId(1L);
+        orderMapper.insert(order);
+
+    }
 
 
     @Test
