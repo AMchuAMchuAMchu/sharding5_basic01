@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -26,16 +25,15 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testSharding01(){
 
-        User user =  new User();
-        user.setUname("Aimer");
-        user.setId(23L);
-        userMapper.insert(user);
-
         Order order = new Order();
         order.setOrderNo("001");
         order.setAmount(new BigDecimal(5201314));
         order.setUserId(1L);
         orderMapper.insert(order);
+
+        User user =  new User();
+        user.setUname("Aimer醉了");
+        userMapper.insert(user);
 
     }
 
