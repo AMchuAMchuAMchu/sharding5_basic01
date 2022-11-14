@@ -32,7 +32,7 @@ class Sharding5Jdbc01ApplicationTests {
         orderMapper.insert(order);
 
         User user =  new User();
-        user.setUname("Aimer醉了");
+        user.setUname("Aimer");
         userMapper.insert(user);
 
     }
