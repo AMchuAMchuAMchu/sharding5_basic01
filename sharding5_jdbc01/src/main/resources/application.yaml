@@ -23,14 +23,14 @@ spring:
     rules:
       readwrite-splitting:
         dataSources:
-          readwrite_ds: # 读写分离逻辑数据源名称
+          readwrite_ds: master,slave1,slave2 # 读写分离逻辑数据源名称
             static-strategy: # 读写分离类型
               write-data-source-name: master # 写库数据源名称
               read-data-source-names: slave1,slave2
-                loadBalancerName: random
-              loadBalancers:
-                random:
-                  type: RANDOM
+            loadBalancerName: random
+          loadBalancers:
+            random:
+              type: RANDOM
     props:
       default: 0
       sql-show: true
