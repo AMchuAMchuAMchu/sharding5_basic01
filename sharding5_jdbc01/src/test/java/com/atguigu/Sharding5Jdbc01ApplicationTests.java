@@ -1,6 +1,8 @@
 package com.atguigu;
 
+import com.atguigu.entity.Order;
 import com.atguigu.entity.User;
+import com.atguigu.mapper.OrderMapper;
 import com.atguigu.mapper.UserMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SpringBootTest
@@ -16,6 +19,25 @@ class Sharding5Jdbc01ApplicationTests {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private OrderMapper orderMapper;
+
+
+    @Test
+    void testSharding01(){
+
+        User user =  new User();
+        user.setUname("Aimer");
+        user.setId(23L);
+        userMapper.insert(user);
+
+        Order order = new Order();
+        order.setOrderNo("001");
+        order.setAmount(new BigDecimal(5201314));
+        order.setUserId(1L);
+        orderMapper.insert(order);
+
+    }
 
 
     @Test
