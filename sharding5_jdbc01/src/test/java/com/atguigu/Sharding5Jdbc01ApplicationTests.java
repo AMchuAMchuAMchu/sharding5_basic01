@@ -26,9 +26,9 @@ class Sharding5Jdbc01ApplicationTests {
     void testSharding01(){
 
         Order order = new Order();
-        order.setOrderNo("001");
+        order.setOrderNo("002");
         order.setAmount(new BigDecimal(5201314));
-        order.setUserId(1L);
+        order.setUserId(2L);
         orderMapper.insert(order);
 
         User user =  new User();
