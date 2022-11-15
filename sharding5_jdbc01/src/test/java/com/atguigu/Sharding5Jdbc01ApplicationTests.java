@@ -8,9 +8,11 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.object.MappingSqlQueryWithParameters;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class Sharding5Jdbc01ApplicationTests {
@@ -22,6 +24,18 @@ class Sharding5Jdbc01ApplicationTests {
     private OrderMapper orderMapper;
 
 
+    @Test
+    void testSelectById(){
+
+        LambdaQueryWrapper<Order> olqw = new LambdaQueryWrapper<>();
+
+        olqw.eq(Order::getUserId,11);
+
+        List<Map<String, Object>> maps = orderMapper.selectMaps(olqw);
+
+        System.out.println(maps);
+
+    }
 
     @Test
     void testSelectAll(){
