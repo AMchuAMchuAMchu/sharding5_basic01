@@ -1,8 +1,10 @@
 package com.atguigu;
 
 import com.atguigu.entity.Order;
+import com.atguigu.entity.OrderItem;
 import com.atguigu.entity.OrderVo;
 import com.atguigu.entity.User;
+import com.atguigu.mapper.OrderItemMapper;
 import com.atguigu.mapper.OrderMapper;
 import com.atguigu.mapper.UserMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -23,6 +25,53 @@ class Sharding5Jdbc01ApplicationTests {
 
     @Autowired
     private OrderMapper orderMapper;
+
+    @Autowired
+    private OrderItemMapper orderItemMapper;
+
+
+
+    /**
+     * 测试关联表插入
+     */
+    @Test
+    void testInsertOrderAndOrderItem(){
+
+        for (long i = 1; i < 3; i++) {
+
+            Order order = new Order();
+            order.setOrderNo("ATGUIGU" + i);
+            order.setUserId(1L);
+            orderMapper.insert(order);
+
+            for (long j = 1; j < 3; j++) {
+                OrderItem orderItem = new OrderItem();
+                orderItem.setOrderNo("ATGUIGU" + i);
+                orderItem.setUserId(1L);
+                orderItem.setPrice(new BigDecimal(10));
+                orderItem.setCount(2);
+                orderItemMapper.insert(orderItem);
+            }
+        }
+
+        for (long i = 5; i < 7; i++) {
+
+            Order order = new Order();
+            order.setOrderNo("ATGUIGU" + i);
+            order.setUserId(2L);
+            orderMapper.insert(order);
+
+            for (long j = 1; j < 3; j++) {
+                OrderItem orderItem = new OrderItem();
+                orderItem.setOrderNo("ATGUIGU" + i);
+                orderItem.setUserId(2L);
+                orderItem.setPrice(new BigDecimal(1));
+                orderItem.setCount(3);
+                orderItemMapper.insert(orderItem);
+            }
+        }
+
+    }
 
 
     @Test
