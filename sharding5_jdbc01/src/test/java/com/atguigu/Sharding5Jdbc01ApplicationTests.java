@@ -24,21 +24,23 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testOrder01(){
 
-//        for (long i = 10; i < 20; i++) {
-//            Order order = new Order();
-//            order.setUserId(i+1);
-//            order.setOrderNo("kirito::"+i);
-//            order.setAmount(new BigDecimal(520));
-//            orderMapper.insert(order);
-//        }
-
+        //server-order0 t_order0     server-order1 t_order1
         for (long i = 10; i < 20; i++) {
             Order order = new Order();
-            order.setUserId(i);
+            order.setUserId(i+1);
             order.setOrderNo("kirito::"+i);
             order.setAmount(new BigDecimal(520));
             orderMapper.insert(order);
         }
+
+        //server-order1 t_order1     server-order0 t_order0
+//        for (long i = 10; i < 20; i++) {
+//            Order order = new Order();
+//            order.setUserId(i);
+//            order.setOrderNo("kirito::"+i+1);
+//            order.setAmount(new BigDecimal(520));
+//            orderMapper.insert(order);
+//        }
 
 
 
