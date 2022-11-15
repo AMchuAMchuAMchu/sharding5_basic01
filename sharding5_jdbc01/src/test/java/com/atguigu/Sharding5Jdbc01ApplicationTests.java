@@ -26,9 +26,10 @@ class Sharding5Jdbc01ApplicationTests {
 
         for (long i = 0; i < 4; i++) {
             Order order = new Order();
-            order.setUserId(i);
-            order.setOrderNo(i+"::");
+            order.setUserId(i+1);
+            order.setOrderNo("::"+i);
             order.setAmount(new BigDecimal(520));
+            orderMapper.insert(order);
         }
 
 
