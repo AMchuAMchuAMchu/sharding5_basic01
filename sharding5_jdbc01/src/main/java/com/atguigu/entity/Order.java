@@ -19,8 +19,8 @@ import java.math.BigDecimal;
 @Data
 public class Order {
 
-//    @TableId(type = IdType.AUTO)
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
+//    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     private String orderNo;
