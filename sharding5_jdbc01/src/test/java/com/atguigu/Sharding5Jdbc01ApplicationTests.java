@@ -25,8 +25,6 @@ class Sharding5Jdbc01ApplicationTests {
     private OrderMapper orderMapper;
 
 
-
-
     @Test
     void testGetOrderAmount(){
         List<OrderVo> orderAmountList = orderMapper.getOrderAmount();
