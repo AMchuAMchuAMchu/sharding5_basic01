@@ -24,10 +24,18 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testOrder01(){
 
-        for (long i = 4; i <= 8; i++) {
+//        for (long i = 10; i < 20; i++) {
+//            Order order = new Order();
+//            order.setUserId(i+1);
+//            order.setOrderNo("kirito::"+i);
+//            order.setAmount(new BigDecimal(520));
+//            orderMapper.insert(order);
+//        }
+
+        for (long i = 10; i < 20; i++) {
             Order order = new Order();
-            order.setUserId(i+1);
-            order.setOrderNo("::"+i);
+            order.setUserId(i);
+            order.setOrderNo("kirito::"+i);
             order.setAmount(new BigDecimal(520));
             orderMapper.insert(order);
         }
