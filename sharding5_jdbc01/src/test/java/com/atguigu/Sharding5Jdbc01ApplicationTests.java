@@ -21,6 +21,21 @@ class Sharding5Jdbc01ApplicationTests {
     @Autowired
     private OrderMapper orderMapper;
 
+    @Test
+    void testOrder01(){
+
+        for (long i = 0; i < 4; i++) {
+            Order order = new Order();
+            order.setUserId(i);
+            order.setOrderNo(i+"::");
+            order.setAmount(new BigDecimal(520));
+        }
+
+
+
+
+    }
+
 
     @Test
     void testHorVer(){
