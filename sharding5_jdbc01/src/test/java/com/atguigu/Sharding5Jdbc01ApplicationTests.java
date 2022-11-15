@@ -1,6 +1,7 @@
 package com.atguigu;
 
 import com.atguigu.entity.Order;
+import com.atguigu.entity.OrderVo;
 import com.atguigu.entity.User;
 import com.atguigu.mapper.OrderMapper;
 import com.atguigu.mapper.UserMapper;
@@ -22,6 +23,15 @@ class Sharding5Jdbc01ApplicationTests {
 
     @Autowired
     private OrderMapper orderMapper;
+
+
+
+
+    @Test
+    void testGetOrderAmount(){
+        List<OrderVo> orderAmountList = orderMapper.getOrderAmount();
+        orderAmountList.forEach(System.out::println);
+    }
 
 
     @Test
