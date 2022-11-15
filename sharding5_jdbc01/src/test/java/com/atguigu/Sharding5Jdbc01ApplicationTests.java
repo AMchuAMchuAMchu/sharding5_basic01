@@ -21,6 +21,17 @@ class Sharding5Jdbc01ApplicationTests {
     @Autowired
     private OrderMapper orderMapper;
 
+
+
+    @Test
+    void testSelectAll(){
+
+        List<Order> orders = orderMapper.selectList(null);
+
+        orders.forEach(System.out::println);
+
+    }
+
     @Test
     void testOrder01(){
 
