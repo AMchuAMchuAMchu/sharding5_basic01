@@ -24,7 +24,7 @@ class Sharding5Jdbc01ApplicationTests {
     @Test
     void testOrder01(){
 
-        for (long i = 0; i < 4; i++) {
+        for (long i = 4; i <= 8; i++) {
             Order order = new Order();
             order.setUserId(i+1);
             order.setOrderNo("::"+i);
