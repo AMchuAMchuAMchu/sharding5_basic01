@@ -15,6 +15,16 @@ class Shardingsphere5Proxy01ApplicationTests {
     @Autowired
     private UserMapper userMapper;
 
+
+    @Test
+    void testInsert(){
+
+        User user =  new User();
+        user.setUname("五条悟");
+        userMapper.insert(user);
+
+    }
+
     @Test
     void testSelect(){
 
