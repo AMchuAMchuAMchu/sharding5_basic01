@@ -33,6 +33,15 @@ class Sharding5Jdbc01ApplicationTests {
 
 
     @Test
+    public void testSelectBroadcast(){
+
+        List<Dict> dicts = dictMapper.selectList(null);
+        dicts.forEach(System.out::println);
+    }
+
+
+
+    @Test
     public void testBroadcast(){
 
         Dict dict = new Dict();
