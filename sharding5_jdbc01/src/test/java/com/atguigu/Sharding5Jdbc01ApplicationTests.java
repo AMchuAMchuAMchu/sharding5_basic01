@@ -1,9 +1,7 @@
 package com.atguigu;
 
-import com.atguigu.entity.Order;
-import com.atguigu.entity.OrderItem;
-import com.atguigu.entity.OrderVo;
-import com.atguigu.entity.User;
+import com.atguigu.entity.*;
+import com.atguigu.mapper.DictMapper;
 import com.atguigu.mapper.OrderItemMapper;
 import com.atguigu.mapper.OrderMapper;
 import com.atguigu.mapper.UserMapper;
@@ -28,6 +26,19 @@ class Sharding5Jdbc01ApplicationTests {
 
     @Autowired
     private OrderItemMapper orderItemMapper;
+
+    @Autowired
+    private DictMapper dictMapper;
+
+
+
+    @Test
+    public void testBroadcast(){
+
+        Dict dict = new Dict();
+        dict.setDictType("type1");
+        dictMapper.insert(dict);
+    }
 
 
 
